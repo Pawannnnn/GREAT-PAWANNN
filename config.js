@@ -17,7 +17,7 @@ const SITE_CONFIG = {
     
     // Liens sociaux
     socialLinks: {
-        github: "https://dpd-cheats-1e3e.vercel.app/",
+        github: "https://www.snapchat.com/@pawan_d57",
         instagram: "https://www.instagram.com/pawan_d57/",
         youtube: "https://www.youtube.com/@DPD57M",
         discord: "https://discord.gg/AeSkEsnbPH",
