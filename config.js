@@ -19,7 +19,7 @@ const SITE_CONFIG = {
     socialLinks: {
         Snapchart: "https://www.snapchat.com/@pawan_d57",
         instagram: "https://www.instagram.com/great_pawan_/",
-        youtube: "https://www.youtube.com/@DPD57M",
+        youtube: "https://www.youtube.com/@PK-NINJA-ON-TOP",
         discord: "https://discord.gg/AeSkEsnbPH",
         telegram: "https://dpd-cheats-1e3e.vercel.app/"
     },
