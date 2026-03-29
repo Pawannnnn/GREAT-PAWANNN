@@ -17,7 +17,7 @@ const SITE_CONFIG = {
     
     // Liens sociaux
     socialLinks: {
-        Snapchart: "https://www.snapchat.com/@pawan_d57",
+        Snapchart: "https://www.snapchat.com/@pk_ninja",
         instagram: "https://www.instagram.com/great_pawan_/",
         youtube: "https://www.youtube.com/@PK-NINJA-ON-TOP",
         discord: "https://discord.gg/AeSkEsnbPH",
