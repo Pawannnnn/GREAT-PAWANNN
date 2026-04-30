@@ -22,7 +22,7 @@ const SITE_CONFIG = {
         instagram2: "https://www.instagram.com/pk_monarch_22",
         youtube: "https://www.youtube.com/@pk_monarch_22",
         discord: "https://discord.gg/AeSkEsnbPH",
-        telegram: "https://dpd-cheats-1e3e.vercel.app/"
+        telegram: "https://pkmonarch22.netlify.app/"
     },
 
     // Configuration audio
