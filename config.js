@@ -5,7 +5,7 @@ const SITE_CONFIG = {
     // Informations personnelles
     title: "GREAT PAWANNN",
     citation: "I don't seek power - I am power.",
-    
+
     // Couleurs principales (format hexadécimal)
     colors: {
         primary: "#e23535",      // Rouge principal
@@ -14,23 +14,24 @@ const SITE_CONFIG = {
         white: "#ffffff",        // Blanc
         black: "#000000"         // Noir
     },
-    
+
     // Liens sociaux
     socialLinks: {
         Snapchart: "https://www.snapchat.com/@pk_ninja_22",
-        instagram: "https://www.instagram.com/pk_ninja_22",
-        youtube: "https://www.youtube.com/@PK-NINJA-ON-TOP",
+        instagram1: "https://www.instagram.com/pk_ninja_22",
+        instagram2: "https://www.instagram.com/pk_monarch_22",
+        youtube: "https://www.youtube.com/@pk_monarch_22",
         discord: "https://discord.gg/AeSkEsnbPH",
         telegram: "https://dpd-cheats-1e3e.vercel.app/"
     },
-    
+
     // Configuration audio
     audio: {
         volume: 0.22,            // Volume par défaut (0.0 à 1.0)
         autoplay: true,          // Lecture automatique
-        loop: true               // Lecture en boucle
+        loop: true               // Lecture en bouclea
     },
-    
+
     // Configuration vidéo
     video: {
         autoplay: true,          // Lecture automatique
@@ -38,7 +39,7 @@ const SITE_CONFIG = {
         loop: true,              // Lecture en boucle
         playsinline: true        // Lecture inline sur mobile
     },
-    
+
     // Configuration des animations
     animations: {
         enabled: true,           // Activer les animations
@@ -47,13 +48,13 @@ const SITE_CONFIG = {
         titleAnimationSpeed: 200, // Vitesse d'animation du titre (ms)
         typingSpeed: 100         // Vitesse de frappe (ms)
     },
-    
+
     // Configuration responsive
     responsive: {
         mobileBreakpoint: 768,   // Point de rupture mobile (px)
         tabletBreakpoint: 1024   // Point de rupture tablette (px)
     },
-    
+
     // Messages personnalisés
     messages: {
         intro: "Click to enter",
@@ -61,7 +62,7 @@ const SITE_CONFIG = {
         errorVideo: "Your browser does not support HTML5 video.",
         errorAudio: "Your browser does not support the audio element."
     },
-    
+
     // Configuration des effets visuels
     effects: {
         scanlines: true,         // Effet de scanlines
@@ -72,7 +73,7 @@ const SITE_CONFIG = {
         parallax: true,          // Effet de parallaxe
         shockwave: true          // Ondes de choc au clic
     },
-    
+
     // Configuration des animations de texte
     textAnimations: {
         holographic: true,       // Animation holographique
@@ -88,32 +89,32 @@ const SITE_CONFIG = {
 function applyConfig() {
     // Application du titre
     document.title = SITE_CONFIG.title;
-    
+
     // Application de la citation
     const citationElement = document.getElementById("citation-text");
     if (citationElement) {
         citationElement.textContent = SITE_CONFIG.citation;
     }
-    
+
     // Application du titre principal
     const titleElement = document.getElementById("main-title");
     if (titleElement) {
         titleElement.textContent = SITE_CONFIG.title;
     }
-    
+
     // Application du message d'intro
     const introElement = document.querySelector(".intro-text");
     if (introElement) {
         introElement.textContent = SITE_CONFIG.messages.intro;
     }
-    
+
     // Configuration audio
     const audio = document.getElementById("audio");
     if (audio) {
         audio.volume = SITE_CONFIG.audio.volume;
         audio.loop = SITE_CONFIG.audio.loop;
     }
-    
+
     // Configuration vidéo
     const video = document.getElementById("background");
     if (video) {
@@ -122,7 +123,7 @@ function applyConfig() {
         video.loop = SITE_CONFIG.video.loop;
         video.playsinline = SITE_CONFIG.video.playsinline;
     }
-    
+
     // Mise à jour des liens sociaux
     updateSocialLinks();
 }
@@ -131,16 +132,22 @@ function applyConfig() {
 function updateSocialLinks() {
     const socialLinks = {
         'github': document.querySelector('a[href*="github.com"]'),
-        'instagram': document.querySelector('a[href*="instagram.com"]'),
         'youtube': document.querySelector('a[href*="youtube.com"]'),
         'discord': document.querySelector('a[href*="discord.gg"]'),
         'telegram': document.querySelector('a[href*="t.me"]')
     };
-    
+
     for (const [platform, element] of Object.entries(socialLinks)) {
         if (element && SITE_CONFIG.socialLinks[platform]) {
             element.href = SITE_CONFIG.socialLinks[platform];
         }
+    }
+
+    // Update Instagram modal links
+    const igLinks = document.querySelectorAll('a.ig-profile-btn');
+    if (igLinks.length >= 2) {
+        if (SITE_CONFIG.socialLinks.instagram1) igLinks[0].href = SITE_CONFIG.socialLinks.instagram1;
+        if (SITE_CONFIG.socialLinks.instagram2) igLinks[1].href = SITE_CONFIG.socialLinks.instagram2;
     }
 }
 
@@ -148,7 +155,7 @@ function updateSocialLinks() {
 function toggleEffect(effectName, enabled) {
     if (SITE_CONFIG.effects[effectName] !== undefined) {
         SITE_CONFIG.effects[effectName] = enabled;
-        
+
         // Application immédiate pour certains effets
         if (effectName === 'scanlines') {
             const scanlines = document.querySelector('.scanlines');
@@ -156,14 +163,14 @@ function toggleEffect(effectName, enabled) {
                 scanlines.style.display = enabled ? 'block' : 'none';
             }
         }
-        
+
         if (effectName === 'vignette') {
             const vignette = document.querySelector('.vignette');
             if (vignette) {
                 vignette.style.display = enabled ? 'block' : 'none';
             }
         }
-        
+
         if (effectName === 'distortion') {
             const distortion = document.querySelector('.screen-distortion');
             if (distortion) {
@@ -176,7 +183,7 @@ function toggleEffect(effectName, enabled) {
 // Fonction pour changer les couleurs
 function updateColors(newColors) {
     Object.assign(SITE_CONFIG.colors, newColors);
-    
+
     // Mise à jour des variables CSS
     const root = document.documentElement;
     root.style.setProperty('--primary-color', SITE_CONFIG.colors.primary);
